@@ -1,1 +1,0 @@
-# Node Module Docs Boilerplate
