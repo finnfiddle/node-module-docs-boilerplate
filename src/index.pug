@@ -6,12 +6,18 @@ html
     meta(http-equiv="X-UA-Compatible" content="chrome=1")
     title #{title} by #{githubUser}
 
-    link(rel="stylesheet" href="style/styles.css")
-    link(rel="stylesheet" href="style/github-light.css")
+    link(rel="stylesheet" href="dist/css/styles.css")
+    link(rel="stylesheet" href="dist/css/github-light.css")
+    link(
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/atom-one-light.min.css"
+    )
+    link(rel="stylesheet" href="dist/css/custom.css")
     meta(name="viewport" content="width=device-width")
     <!--[if lt IE 9]>
     script(src="//html5shiv.googlecode.com/svn/trunk/html5.js")
     <![endif]-->
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js")
   body
     .wrapper
       header
@@ -34,12 +40,14 @@ html
               strong GitHub
 
       section
-        +heading Installation
+        +heading Basic Example
 
-        p Example paragraph.
+        +code('html')
+          :escape
+            <input />
 
-        code
-          pre npm install #{name}
+        #example-1
+
 
       footer
         p This project is maintained by&nbsp;
@@ -48,4 +56,6 @@ html
           small Hosted on GitHub Pages &mdash; Theme by&nbsp;
             a(href="https://github.com/orderedlist") orderedlist
 
-    script(src="scripts/scale.fix.js")
+    script hljs.initHighlightingOnLoad();
+    script(src="dist/js/scale.fix.js")
+    script(src="dist/js/bundle.js")
